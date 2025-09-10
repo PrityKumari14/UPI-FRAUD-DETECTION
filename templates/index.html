@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI Fraud Detection System</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <center><img src="https://www.equentis.com/blog/wp-content/uploads/2023/03/Secure-your-account-from-UPI-frauds.jpg"></center>
+    <div class="container">
+        <h2>UPI Fraud Detection System</h2>
+        <form action="/predict" method="post">
+            <lable>ID:</lable>
+            <input type="number" name="Id" required class="input-box">
+            <label>Transaction Hour:</label>
+            <input type="number" name="trans_hour" required class="input-box">
+            <label>Transaction Day:</label>
+            <input type="number" name="trans_day" required class="input-box">
+            <label>Transaction Month:</label>
+            <input type="number" name="trans_month" required class="input-box">
+            <label>Transaction Year:</label>
+            <input type="number" name="trans_year" required class="input-box">
+            <label>Transaction Amount:</label>
+            <input type="number" step="0.01" name="trans_amount" required class="input-box">
+            <label>UPI Number:</label>
+            <input type="text" name="upi_number" required class="input-box"> <!-- New UPI Number Input -->
+            <button type="submit" name="action" value="predict">Predict</button><br>
+            <button type="submit" name="action" value="submit">Submit</button>
+            <a href="history">View History</a>
+        </form>
+        {% if result %}
+        <div class="results {{ 'fraud' if result == 'Fraud' else 'not-fraud' }}">
+            <h3>{{ result }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

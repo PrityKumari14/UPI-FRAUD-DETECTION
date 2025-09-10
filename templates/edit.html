@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Transaction</title>
+</head>
+<body>
+    <h1>Edit Transaction</h1>
+    <form method="POST">
+        <label>ID:</label><input type="number" name="Id" value="{{record[1]}}"><br>
+        <label>Hour:</label><input type="number" name="trans_hour" value="{{ record[2] }}"><br>
+        <label>Day:</label><input type="number" name="trans_day" value="{{ record[3] }}"><br>
+        <label>Month:</label><input type="number" name="trans_month" value="{{ record[4] }}"><br>
+        <label>Year:</label><input type="number" name="trans_year" value="{{ record[5] }}"><br>
+        <label>Amount:</label><input type="number" step="0.01" name="trans_amount" value="{{ record[6] }}"><br>
+        <label>UPI Number:</label><input type="text" name="upi_number" value="{{ record[7] }}"><br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/history">Back to History</a>
+</body>
+</html>

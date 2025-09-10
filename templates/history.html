@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction History</title>
+</head>
+<body>
+    <h1>History</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th><th>Hour</th><th>Day</th><th>Month</th><th>Year</th>
+            <th>Amount</th><th>UPI</th><th>Prediction</th><th>Actions</th>
+        </tr>
+        {% for row in records %}
+        <tr>
+            <td>{{ row[0] }}</td><td>{{ row[1] }}</td><td>{{ row[2] }}</td><td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td><td>{{ row[5] }}</td><td>{{ row[6] }}</td><td>{{ row[7] }}</td>
+            <td>
+                <a href="/edit/{{ row[0] }}">Edit</a> |
+                <a href="/delete/{{ row[0] }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Go Back</a>
+</body>
+</html>
